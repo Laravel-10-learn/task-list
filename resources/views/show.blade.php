@@ -1,3 +1,4 @@
+<h1>{{$task->title}}</h1>
 <div>
-    {{$task->title}}
+    {{ $task->title }}
 </div>
