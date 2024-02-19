@@ -39,7 +39,9 @@ Route::post('/tasks', function (Request $request) {
     $task->long_description = $data['long_description'];
     $task->save();
 
-    return redirect()->route('tasks.show', ['id' => $task->id]);
+    return redirect()->route('tasks.show', ['id' => $task->id])
+        // flash message.
+        ->with('success', 'TaskCreated successfully!');
 })->name('tasks.store');
 
 Route::view('/tasks/create', 'create')
