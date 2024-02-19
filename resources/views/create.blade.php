@@ -4,10 +4,11 @@
 
 @section('content')
     <form method="POST" action="{{ route('tasks.store') }}">
+        {{ $errors }}
         @csrf
         <div>
             <label for="title">Title</label>
-            <input text="text" name="title" id="title" />
+            <input type="text" name="title" id="title" />
         </div>
 
         <div>
