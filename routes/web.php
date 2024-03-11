@@ -64,3 +64,10 @@ Route::get('/tasks/{task}', function (Task $task) {
         'task' => $task
     ]);
 })->name('tasks.show');
+
+Route::put('tasks/{task}/toggle-complete', function (Task $task){
+    $task->toggleComplete();
+
+    return redirect()->back()->with('success', 'Task updated successfully!');
+})->name('tasks.toggle-complete');
+
